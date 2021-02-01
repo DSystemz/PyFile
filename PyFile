@@ -1,0 +1,35 @@
+import os
+import PySimpleGUI as sg
+import sys
+#os.system('cd Z:\\Suporte TI\\executavel\\')
+#os.system('start, Z:\Suporte TI\executavel\Firefox Setup 70.0.1.exe')
+#os.system('start, Z:\Suporte TI\executavel\Instalador_TSCOBRA.exe')
+#os.system('start, Z:\Suporte TI\executavel\AnyDesk.exe')
+#os.system('start, Z:\Suporte TI\executavel\ChromeSetup.exe')
+#os.system('start, Z:\Suporte TI\executavel\PDFCreator.exe')
+#os.system('start, Z:\Suporte TI\executavel\spark_2_7_7.exe')
+#os.system('start, Z:\Suporte TI\executavel\THUNDERBIRD Setup 52.3.0.exe')
+#os.system('start, Z:\Suporte TI\executavel\tightvnc-2.7.10-setup-64bit.msi')
+#os.system('start, Z:\Suporte TI\executavel\WPSOffice_11.2.0.8991.exe')
+#os.system('start, Z:\Suporte TI\executavel\wrar401br.exe')
+#os.system('start, Z:\Suporte TI\executavel\Zoiper_Free_3.15_Setup.exe')
+if len(sys.argv) == 1:
+    sg.theme('Dark')
+    event, values = sg.Window('PyFile'
+        [
+    [sg.Button('Executavel 1')],
+    [sg.Button('Executavel 2')],
+    [sg.Button('Executavel 3')],
+    [sg.Button('Executavel 4')],
+    [sg.Button('Executavel 5')],
+    [sg.Button('Executavel 6')],
+    [sg.Button('Executavel 7')],
+    [sg.Button('Executavel 8')],
+    [sg.Button('Executavel 9')],
+    [sg.Button('Executavel 10')],
+    [sg.Button('Executavel 11')],
+    [sg.Cancel('Cancelar'), sg.Button('...')]
+        ])
+    fname = values[0]
+else:
+    fname = sys.argv[1]
