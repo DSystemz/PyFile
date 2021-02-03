@@ -1,47 +1,52 @@
 #UTF-8
 from PySimpleGUI import PySimpleGUI as sg
+import os
 import sys
+from Scr import ok
 def initial():
-    sg.theme('Reddit')
+    sg.theme('ole')
     layoutt = [
-    [sg.Button('Executavel 1'), sg.Button('Executavel 2')],
-    [sg.Button('Executavel 3'), sg.Button('Executavel 4')],
-    [sg.Button('Executavel 5'), sg.Button('Executavel 6')],
-    [sg.Button('Executavel 7'), sg.Button('Executavel 8')],
-    [sg.Button('Executavel 9'), sg.Button('Executavel 10')],
-    [sg.Button('Executavel 11'), sg.Button('Execute tudo')],
-    [sg.Cancel('Sair'), sg.Button('Gerar Relatório de Bug')]]
+    [sg.Button('AcroCDR'), sg.Button('AnyDesk')],
+    [sg.Button('Chrome'), sg.Button('Firefox')],
+    [sg.Button('TS COBRA'), sg.Button('SPARK')],
+    [sg.Button('ThunderBird'), sg.Button('TightVNC')],
+    [sg.Button('WPSOffice'), sg.Button('Winrar')],
+    [sg.Button('Zoiper'), sg.Button('Execute tudo')],
+    [sg.Cancel('Sair'),]]
     window = sg.Window('PYINSTALLER', layoutt, size=(400,250), element_justification='center')
     button, values = window.read()
     window()
-    if button == 'Executavel 1':
-        sg.Popup('Você escolheu o Botao 1')
-    elif button == 'Executavel 2':
-        sg.Popup('Você escolheu o Botao 2')
-    elif button == 'Executavel 3':
-        sg.Popup('Você escolheu o Botao 3')
-    elif button == 'Executavel 4':
-        sg.Popup('Você escolheu o Botao 4')
-    elif button == 'Executavel 5':
-        sg.Popup('Você escolheu o Botao 5')
-    elif button == 'Executavel 6':
-        sg.Popup('Você escolheu o Botao 6')
-    elif button == 'Executavel 7':
-        sg.Popup('Você escolheu o Botao 7')
-    elif button == 'Executavel 8':
-        sg.Popup('Você escolheu o Botao 8')
-    elif button == 'Executavel 9':
-        sg.Popup('Você escolheu o Botao 9')
-    elif button == 'Executavel 10':
-        sg.Popup('Você escolheu o Botao 10')
-    elif button == 'Executavel 11':
-        sg.Popup('Você escolheu o Botao 11')
-    elif button == 'Gerar Relatório de Bug':
-        sg.Popup('Gerando relatório, aguarde.')
-        #dale nos codigo caralho
-    elif button == 'Sair':
-        sys.exit()
+    if not os.path.exists('C:\\FILE\\exec\\'):
+        os.system('mkdir C:\\FILE\\exec\\')
     else:
-        sg.Popup('Não foi possível executar o comando!')
-        sys.exit()
+        if button == 'AcroCDR':
+            os.system('start C:\\FILE\\exec\\AcroCDR.exe')
+        elif button == 'AnyDesk':
+            os.system('start C:\\FILE\\exec\\AnyDesk.exe')
+        elif button == 'Chrome':
+            os.system('start C:\\FILE\\exec\\ChromeSetup.exe')
+        elif button == 'Firefox':
+            os.system('start C:\\FILE\\exec\\FirefoxSetup.exe')
+        elif button == 'TS COBRA':
+            os.system('start C:\\FILE\\exec\\TSCOBRA.exe')
+        elif button == 'SPARK':
+            os.system('start C:\\FILE\\exec\\spark.exe')
+        elif button == 'ThunderBird':
+            os.system('start C:\\FILE\\exec\ThunderBird.exe')
+        elif button == 'TightVNC':
+            os.system('start TightVNC')
+        elif button == 'WPSOffice':
+            os.system('start C:\\FILE\\exec\\WPSOffice.exe')
+        elif button == 'Winrar':
+            os.system(('start C:\\FILE\\exec\\winrar.exe'))
+        elif button == 'Zoiper':
+            os.system('start C:\\FILE\\exec\\Zoiper.exe')
+        elif button == 'Execute tudo':
+            sg.Popup('Deixa de ser Preguiçoso João! >;(')
+            #dale nos codigo caralho
+        elif button == 'Sair':
+            sys.exit()
+        else:
+            sg.Popup('Não foi possível executar o comando!')
+            sys.exit()
 initial()
