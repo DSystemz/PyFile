@@ -1,35 +1,47 @@
-import os
-import PySimpleGUI as sg
+#UTF-8
+from PySimpleGUI import PySimpleGUI as sg
 import sys
-#os.system('cd Z:\\Suporte TI\\executavel\\')
-#os.system('start, Z:\Suporte TI\executavel\Firefox Setup 70.0.1.exe')
-#os.system('start, Z:\Suporte TI\executavel\Instalador_TSCOBRA.exe')
-#os.system('start, Z:\Suporte TI\executavel\AnyDesk.exe')
-#os.system('start, Z:\Suporte TI\executavel\ChromeSetup.exe')
-#os.system('start, Z:\Suporte TI\executavel\PDFCreator.exe')
-#os.system('start, Z:\Suporte TI\executavel\spark_2_7_7.exe')
-#os.system('start, Z:\Suporte TI\executavel\THUNDERBIRD Setup 52.3.0.exe')
-#os.system('start, Z:\Suporte TI\executavel\tightvnc-2.7.10-setup-64bit.msi')
-#os.system('start, Z:\Suporte TI\executavel\WPSOffice_11.2.0.8991.exe')
-#os.system('start, Z:\Suporte TI\executavel\wrar401br.exe')
-#os.system('start, Z:\Suporte TI\executavel\Zoiper_Free_3.15_Setup.exe')
-if len(sys.argv) == 1:
-    sg.theme('Dark')
-    event, values = sg.Window('PyFile'
-        [
-    [sg.Button('Executavel 1')],
-    [sg.Button('Executavel 2')],
-    [sg.Button('Executavel 3')],
-    [sg.Button('Executavel 4')],
-    [sg.Button('Executavel 5')],
-    [sg.Button('Executavel 6')],
-    [sg.Button('Executavel 7')],
-    [sg.Button('Executavel 8')],
-    [sg.Button('Executavel 9')],
-    [sg.Button('Executavel 10')],
-    [sg.Button('Executavel 11')],
-    [sg.Cancel('Cancelar'), sg.Button('...')]
-        ])
-    fname = values[0]
-else:
-    fname = sys.argv[1]
+def initial():
+    sg.theme('Reddit')
+    layoutt = [
+    [sg.Button('Executavel 1'), sg.Button('Executavel 2')],
+    [sg.Button('Executavel 3'), sg.Button('Executavel 4')],
+    [sg.Button('Executavel 5'), sg.Button('Executavel 6')],
+    [sg.Button('Executavel 7'), sg.Button('Executavel 8')],
+    [sg.Button('Executavel 9'), sg.Button('Executavel 10')],
+    [sg.Button('Executavel 11'), sg.Button('Execute tudo')],
+    [sg.Cancel('Sair'), sg.Button('Gerar Relatório de Bug')]]
+    window = sg.Window('PYINSTALLER', layoutt, size=(400,250), element_justification='center')
+    button, values = window.read()
+    window()
+    if button == 'Executavel 1':
+        sg.Popup('Você escolheu o Botao 1')
+    elif button == 'Executavel 2':
+        sg.Popup('Você escolheu o Botao 2')
+    elif button == 'Executavel 3':
+        sg.Popup('Você escolheu o Botao 3')
+    elif button == 'Executavel 4':
+        sg.Popup('Você escolheu o Botao 4')
+    elif button == 'Executavel 5':
+        sg.Popup('Você escolheu o Botao 5')
+    elif button == 'Executavel 6':
+        sg.Popup('Você escolheu o Botao 6')
+    elif button == 'Executavel 7':
+        sg.Popup('Você escolheu o Botao 7')
+    elif button == 'Executavel 8':
+        sg.Popup('Você escolheu o Botao 8')
+    elif button == 'Executavel 9':
+        sg.Popup('Você escolheu o Botao 9')
+    elif button == 'Executavel 10':
+        sg.Popup('Você escolheu o Botao 10')
+    elif button == 'Executavel 11':
+        sg.Popup('Você escolheu o Botao 11')
+    elif button == 'Gerar Relatório de Bug':
+        sg.Popup('Gerando relatório, aguarde.')
+        #dale nos codigo caralho
+    elif button == 'Sair':
+        sys.exit()
+    else:
+        sg.Popup('Não foi possível executar o comando!')
+        sys.exit()
+initial()
